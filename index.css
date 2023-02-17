@@ -1,0 +1,52 @@
+.body_style{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid black;
+}
+button {
+    cursor: pointer;
+    padding: 0.3rem 2rem;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: antiquewhite;
+    border-radius: 12px;
+    margin-top: 3px;
+    border: 0.5px solid black;
+}
+input {
+   padding: 0.3rem 0.5rem;
+   font-size: 15px;
+   font-weight: bold;
+
+}
+form{
+    justify-content: center;
+    text-align: center;
+}
+label{
+    font-size: 15px;
+    font-weight: bold;
+}
+select{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0.3rem 1rem;
+    margin: 1rem 0rem;
+
+}
+.third_question_big{
+    display: flex;
+    justify-content: center;
+}
+.forth_question_content{
+    margin-left: 50px;
+}
+h1{
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+}

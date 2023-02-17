@@ -1,0 +1,385 @@
+<html>
+<head>
+    <title>
+        Final One
+    </title>
+    <link><link rel="stylesheet" href="index.css">
+</head>
+<script>
+    function myCalculateFunction() 
+        {
+            let data = document.getElementById('inputstring').value;
+            let upper = data.toUpperCase();            
+            let valueOfArray = upper.split(""); 
+            let stringlist = 
+            {
+                A: 1, B: 2, C: 3, D: 4, E: 5, F: 8, G: 3, H: 5, I: 1, J: 1, K: 2, L: 3, M: 4,
+                N: 5, O: 7, P: 8, Q: 1, R: 2, S: 3, T: 4, U: 6, V: 6, W: 6, X: 5, Y: 1, Z: 7
+            };
+            let len = valueOfArray.length;
+            let stringValue = 0;
+            for(let i=0; i < len; i++){                
+                switch(valueOfArray[i])
+                {
+                    case "A" :
+                    case "I" :
+                    case "J" :
+                    case "Q" :
+                    case "Y" :
+                        stringValue += 1;
+                        break;
+                    case "B" :
+                    case "K" :
+                    case "R" :
+                        stringValue += 2;
+                        break;
+                    case "C" :
+                    case "G" :
+                    case "L" :
+                    case "S" :
+                        stringValue += 3; 
+                        break;
+                    case "D" :
+                    case "M" :
+                    case "T" : 
+                        stringValue += 4;
+                        break;
+                    case "E" :
+                    case "H" :
+                    case "N" :
+                    case "X" :
+                        stringValue += 5;
+                        break;
+                    case "F" :
+                    case "P" :
+                        stringValue += 8;
+                        break;
+                    case "O" :
+                    case "Z" :
+                        stringValue += 7;
+                        break;
+                    case "U" :
+                    case "V" :
+                    case "W" :
+                        stringValue += 6;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            let convertString = stringValue.toString();
+            let stringValueSplit = convertString.split("");          
+            let length = stringValueSplit.length;
+            let finalResult = 0;                
+                for( let i=0; i < length; i++){
+                        finalResult += parseInt(stringValueSplit[i]);
+                }
+                if(finalResult.toString().length > 1 )
+                {
+                    let finaltoString = finalResult.toString();
+                    let finalLength = finaltoSting.split("");
+                    for( let i=0; i < finalLength.length; i++)
+                    {
+                        finalResult += parseInt(stringValueSplit[i]);        
+                    }
+            }
+            document.getElementById('putvalue').innerHTML = finalResult;
+            document.getElementById('inputstring').value = '';            
+        }
+    function myFinFunction()
+        {
+        let list = [163,546,465,457,987,509,465];
+        let value = document.getElementById("twodigits").value;
+            let result = list.filter(item=> 
+            {
+                let valueLength = value.split("");                          
+                    let stringItem = item.toString().split("");
+                    let len = stringItem.length;                 
+                    for(let i=len; i > len-1 ; i--)
+                    {                      
+                        for(let j=valueLength.length ; j > 0; j--)
+                        {
+                            if(stringItem[i-1] == valueLength[j-1])
+                            {
+                                if(stringItem[i-2] == valueLength[j-2])
+                                {
+                                    return true;
+                                }
+                            }
+                        } 
+                    }
+            });
+            document.getElementById("result").innerHTML = result;
+        }
+    function biggestFunction()
+        {
+            let list = [ 45, 34, 36, 87, 98, 68, 16, 90, 46, 17 ];
+                let biggest = list[0];
+                for(i=0; i<list.length; i++)
+                {
+                    if(biggest < list[i])
+                    {                        
+                        biggest = list[i];                        
+                    }
+                }
+            document.getElementById("big").innerHTML = "Bigest Number is = " + biggest;
+        }
+    function lowestFunction()
+        {
+            let list = [ 45, 34, 36, 87, 98, 68, 16, 90, 46, 17 ];
+            let lowest = list[0];
+                for(i=0; i<list.length; i++)
+                {
+                    if(lowest > list[i])
+                    {                        
+                        lowest = list[i];                        
+                    }
+                }                    
+            document.getElementById("big").innerHTML = "Lowest Number is = " + lowest;
+        }
+    function myReverseFunction() 
+        {
+            let getStringInput = document.getElementById('reversebox').value;
+            let arrayOfString = getStringInput.split("");
+            let arrayLength = arrayOfString.length-1;
+            let result= '';
+            for(i=arrayLength; i>=0; i--){
+                    result += arrayOfString[i];
+            }
+            document.getElementById('reverse').innerHTML = result;
+        }
+    function myRandomFunction()
+        {
+            let getStringInput = document.getElementById('randombox').value;
+            let arrayOfString = getStringInput.split("");
+
+            let arrayLength = arrayOfString.length;
+
+                for(let i = arrayLength - 1; i > 0; i--) {
+                    let j = Math.floor(Math.random() * (i + 1));
+                    let tmp = arrayOfString[i];
+                    arrayOfString[i] = arrayOfString[j];
+                    arrayOfString[j] = tmp;
+                }
+                
+                document.getElementById('random').innerHTML =  arrayOfString;
+        }
+    function myConcatFunction() 
+        {
+            let getStringInput = document.getElementById('concatbox').value;
+            let arrayOfInput = getStringInput.split(",").join("");
+            let ignorSpace= arrayOfInput.split(" ").join("");
+            let result = ignorSpace.split("");       
+            document.getElementById('concat').innerHTML = result;
+        }        
+    function mySelectFunction() 
+        {
+            let getStringInput = document.getElementById("select").value;  
+            let user1 = [35, 50, 75, 80, 100];          
+            let user2 = [55, 80, 99, 48, 67];  
+            if(getStringInput == 1)
+            {
+                for(i=0; i<user1.length; i++)
+                {            
+                    for(j=i; j<user1.length; j++){
+                        let temp = user1[i];
+                        if(user1[j] < temp)
+                        {
+                            temp = user1[j];
+                            user1[j] = user1[i];
+                            user1[i] = temp;
+                        }            
+                    }          
+                }   
+                document.getElementById("selected").innerHTML = user1;
+            }            
+            else if(getStringInput == 2)
+            {
+                for(i=0; i<user2.length; i++)
+                    {            
+                        for(j=i; j<user2.length; j++)
+                        {
+                            let temp = user2[i];
+                            if(user2[j] < temp)
+                            {
+                                temp = user2[j];
+                                user2[j] = user2[i];
+                                user2[i] = temp;
+                            }
+                        }          
+                    }   
+                document.getElementById("selected").innerHTML = user2;
+            }                  
+        }
+    function cardsFunction ()
+        {
+            let arrayOfString = "S-1,S-2,S-3,S-4,S-5,S-6,S-7,S-8,S-9,S-10,S-11,S-12,S-13,C-1,C-2,C-3,C-4,C-5,C-6,C-7,C-8,C-9,C-10,C-11,C-12,C-13,H-1,H-2,H-3,H-4,H-5,H-6,H-7,H-8,H-9,H-10,H-11,H-12,H-13,D-1,D-2,D-3,D-4,D-5,D-6,D-7,D-8,D-9,D-10,D-11,D-12,D-13";
+            let cards = arrayOfString.split(",");
+            let cardsLength = cards.length;      
+            for(let i=cardsLength-1; i > 0; i--){
+                let j = Math.floor(Math.random() * (i + 1));
+                let tmp = cards[i];
+                cards[i] = cards[j];
+                cards[j] = tmp;
+            }                 
+            let person = [];        
+            let getInput = document.getElementById("person").value;        
+                let count = 0;
+                if(parseInt(getInput) == 2){
+                    count = 52 / parseInt(getInput);
+                }
+                else if(getInput == 4){
+                    count = 52 / parseInt(getInput);
+                }             
+                for(i=0; i < 52; i += count){
+                    for(j=i; j <i + count; j++){
+                        person += cards[j] + ", ";
+                    }
+                    person += `<br>`;
+                }            
+                document.getElementById("deliver").innerHTML = person;
+        }
+
+</script>
+<body>
+    <div class="body_style">
+        <div class="first_question">
+            <h1>1. Finding Lucky Number</h1>
+            <pre>
+                1. Get input string from user
+                2. Find value for each characters of user input string (for values see below reference)
+                3. Calculate the total values of all the characters value
+                4. split the total values and again calculate all values and finally make it as a single number
+
+                A - 1, B - 2, C - 3, D - 4, E - 5, F - 8, G - 3, H - 5, I - 1, J - 1, K - 2, L - 3, M - 4,
+                N - 5, O - 7, P - 8, Q - 1, R - 2, S - 3, T - 4, U - 6, V - 6, W - 6,X - 5,Y - 1, Z - 7
+            </pre>
+            <form>
+                <input type="text" id="inputstring" placeholder="Input the text" />
+                <h1 id="putvalue"></h1>
+                <button type="button" onclick="myCalculateFunction()">Calc</button>
+            </form>        
+        </div>
+        <div class="second_question">
+            <h1>2. Find Last 2 Digits Matches number</h1>
+            <pre>
+                Get all matched last 2 digits number from the given list
+                List = [163,546,465,457,987,509,465]
+                Match Last 2 digits in the Array
+            </pre>
+            
+            <form>
+                <h1 id="result"></h1>
+                <input type="number" id="twodigits" placeholder="Enter the Number"/>            
+            </form>
+            <div style="display: flex; justify-content: center;">
+                <button type="button" onclick="myFinFunction()">Find</button>
+            </div>
+        </div>
+        <div class="third_question">    
+            <h1>3. Find Big and Small Number</h1>
+                <pre>
+                    Find biggest and lowest numbers from given List / Array
+                    List = [45,34,36,87,98,68,16,90,46,17]
+                </pre>
+            <div class="third_question_big">
+                <div style="display: flex; flex-direction: column;">
+                    <h2 id="big"></h2>
+                    <div>
+                        <button onclick="biggestFunction()">Biggest NUmber</button>
+                        <button onclick="lowestFunction()">Lowest Number</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fourth_question">
+                <h1>4. String reverse,shuffle,merge and two dimensional list</h1>
+                <pre>
+                    1. Get input string from user and display it in the reverse order
+                    2. Get input string from user and display it in the mixed format
+                    3. Convert into single list from given multiple list
+                    4. Create two dimensional Array / List with user given input and display values of the
+                    given name when user search by name in search box
+
+                    [“user1”:[35,50,75,80,100],”user2”:[55,80,99,48,67]]//this list will generate in runtime by user given input
+                </pre>                        
+            <div class="third_question_big">
+                <div style="display: flex; flex-direction: column;">
+                    <h1 id="reverse"></h1>
+                    <div class="input_box">                
+                        <form>
+                            <input type="text" id="reversebox" placeholder="Input the Text" />
+                        </form>
+                    </div>
+                    <div>
+                        <button onclick="myReverseFunction()">Reverse the Input</button>
+                    </div>
+                    <div class="input_box">
+                        <h1 id="random"></h1>
+                        <form style="margin-top: 1rem;">
+                        <input type="text" id="randombox" placeholder="Enter the Text" />
+                        </form>
+                    </div> 
+                        <div>       
+                            <button onclick="myRandomFunction()">Random the Input</button>
+                        </div>                   
+                </div>                        
+                <div class="forth_question_content">
+                    <div class="input_box">
+                        <h1 id="concat"></h1>
+                        <form>
+                            <input type="text" id="concatbox" placeholder="Enter the Array" />
+                        </form>
+                    </div>
+                    <div>
+                        <button onclick="myConcatFunction()">Concatanation the Input</button>
+                    </div>
+                    <div>
+                        <h1 id="selected"></h1>
+                        <div>
+                            <select id="select">
+                                <option value="1">User 1</option>
+                                <option value="2">User 2</option>
+                            </select> 
+                        </div>                           
+                        <div>        
+                            <button onclick="mySelectFunction()">Select User Value</button>
+                        </div>
+                    </div>
+                </div>             
+            </div>
+        </div>
+        <div class="fifth_question">
+            <h1>5. Play card split by suit</h1>
+            <pre>    
+                Create one List / Array with given values and shuffle the List / Array and print the List / Array
+                values.
+                Split it into 4 Lists by suits and print 4 List values
+                List = [ S-1,S-2,S-3,S-4,S-5,S-6,S-7,S-8,S-9,S-10,S-11,S-12,S-13,
+                C-1,C-2,C-3,C-4,C-5,C-6,C-7,C-8,C-9,C-10,C-11,C-12,C-13,
+                H-1,H-2,H-3,H-4,H-5,H-6,H-7,H-8,H-9,H-10,H-11,H-12,H-13,
+                D-1,D-2,D-3,D-4,D-5,D-6,D-7,D-8,D-9,D-10,D-11,D-12,D-13 ]
+            </pre>
+            <div style="text-align: center;">            
+                <h3 id="deliver"></h3>
+            </div> 
+            <div style="display: flex; justify-content: center;">    
+                <div style="display: flex; flex-direction: column; ">                         
+                    <div>            
+                        <h1>Person Counts</h1>
+                        <div>
+                            <select id="person">
+                                <option value="2">2</option>
+                                <option vlaue="4">4</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button onclick="cardsFunction()">Deliver</button>
+                        </div> 
+                    </div>                  
+                </div>
+            </div>
+        </div>  
+    </div>
+</body>
+</html>
