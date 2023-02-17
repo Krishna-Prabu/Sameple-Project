@@ -1,1 +1,1 @@
-# Sameple-Project => https://krishna-prabu.github.io/Sameple-Project/
+# Sameple-Project => https://krishna-prabu.github.io/quick-tasks/
